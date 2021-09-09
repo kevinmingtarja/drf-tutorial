@@ -29,3 +29,9 @@ def student_detail_serializer(request, id):
 	student = Student.objects.get(nusnet_id = id)
 	serializer = StudentSerializer(student)
 	return Response(serializer.data)
+
+@api_view(['GET'])
+def student_list(request):
+	queryset = Student.objects.all()
+	serializer = StudentSerializer(queryset, many=True)
+	return Response(serializer.data)

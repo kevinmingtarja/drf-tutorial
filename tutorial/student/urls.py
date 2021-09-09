@@ -6,5 +6,5 @@ urlpatterns = [
   path('hello-world-2', views.hello_world_v2),
   path('student-manual/<str:id>', views.student_detail_manual),
   path('student/<str:id>', views.student_detail_serializer),
-  path('students', views.student_list),
+  path('students', views.StudentList.as_view()),
 ]
